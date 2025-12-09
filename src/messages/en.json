@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "title": "Salaam Cola - Taste the Freedom",
+    "description": "Premium halal cola made with passion and purpose. Experience the authentic taste of freedom with Salaam Cola Malaysia."
+  },
+  "navigation": {
+    "home": "Home",
+    "shop": "Shop",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "language": "Language",
+    "cart": "Cart"
+  },
+  "hero": {
+    "title": "TASTE THE",
+    "highlight": "FREEDOM",
+    "description": "Proudly Malaysian with roots stretching far. The new age approach to refreshing Taste Independence.",
+    "cta": "Shop Now",
+    "scrollDown": "Scroll to explore"
+  },
+  "products": {
+    "title": "Mister Cola",
+    "subtitle": "Experience the authentic taste",
+    "bestSellers": "Our Best Sellers",
+    "viewAll": "View All Products",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "price": "Price",
+    "quantity": "Quantity"
+  },
+  "retailers": {
+    "title": "Where to Buy",
+    "subtitle": "Available at these retailers"
+  },
+  "mission": {
+    "title": "TASTE IS EVERYTHING",
+    "description": "We're fundamentally a F&B company with a commitment to ethical refreshment. Our products are crafted for the conscious consumer who values quality and purpose. The beverage itself? It's awesome, of course.",
+    "cta": "Learn Our Story"
+  },
+  "impact": {
+    "title": "GIVING POWER TO PEOPLE",
+    "subtitle": "Choose where profits flow",
+    "description": "Every sip supports communities. We believe in making a difference, one bottle at a time. Your choice matters.",
+    "cta": "See Impact"
+  },
+  "change": {
+    "title": "CHANGE STARTS SMALL",
+    "subtitle": "Join our movement for positive change",
+    "description": "Be part of something bigger. Every purchase contributes to meaningful change in communities across Malaysia.",
+    "cta": "Join the Movement"
+  },
+  "instagram": {
+    "title": "Follow us on",
+    "highlight": "Instagram",
+    "cta": "View More"
+  },
+  "newsletter": {
+    "title": "Get 10% off your first purchase",
+    "subtitle": "Subscribe to our newsletter for exclusive offers and updates",
+    "placeholder": "Enter your email",
+    "cta": "Subscribe",
+    "privacy": "By subscribing, you agree to our Privacy Policy",
+    "success": "Thank you for subscribing!",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "company": "Salaam Cola",
+    "tagline": "Taste the Freedom",
+    "quickLinks": "Quick Links",
+    "connect": "Connect With Us",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "All rights reserved"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping calculated at checkout",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "itemAdded": "Item added to cart"
+  },
+  "shop": {
+    "title": "Shop",
+    "allProducts": "All Products",
+    "categories": "Categories",
+    "sortBy": "Sort by",
+    "newest": "Newest",
+    "priceLowHigh": "Price: Low to High",
+    "priceHighLow": "Price: High to Low",
+    "noProducts": "No products found"
+  },
+  "product": {
+    "description": "Description",
+    "details": "Details",
+    "relatedProducts": "You May Also Like"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}
