@@ -19,6 +19,47 @@
     "cta": "Shop Now",
     "scrollDown": "Scroll to explore"
   },
+  "reviews": {
+    "title": "Customer Reviews",
+    "basedOn": "Based on 500+ reviews"
+  },
+  "lineup": {
+    "title": "Refreshing Can Lineup",
+    "subtitle": "Discover our range of premium halal beverages crafted for the conscious consumer",
+    "viewAll": "View All Products"
+  },
+  "taste": {
+    "tagline": "Our Philosophy",
+    "title": "TASTE IS EVERYTHING",
+    "description": "We're fundamentally a F&B company with a commitment to ethical refreshment. Our products are crafted for the conscious consumer who values quality and purpose.",
+    "feature1": "Natural Ingredients",
+    "feature2": "Halal Certified",
+    "feature3": "Made with Love",
+    "cta": "Learn Our Story"
+  },
+  "change": {
+    "tagline": "Make a Difference",
+    "title": "CHANGE STARTS SMALL",
+    "description": "Be part of something bigger. Every purchase contributes to meaningful change in communities across Malaysia. Your choice matters.",
+    "cta": "Join the Movement"
+  },
+  "trade": {
+    "tagline": "Business Partnership",
+    "title": "Trade Enquiries",
+    "description": "Become a stockist and join our growing network of retailers across Malaysia. Partner with us to bring refreshing change to your customers.",
+    "contactTitle": "Get in Touch",
+    "cta": "Contact Us"
+  },
+  "newsletter": {
+    "badge": "Special Offer",
+    "title": "Subscribe to Our Newsletter",
+    "subtitle": "Get 10% off your first purchase and stay updated with exclusive offers",
+    "placeholder": "Enter your email",
+    "cta": "Subscribe",
+    "privacy": "By subscribing, you agree to our Privacy Policy",
+    "success": "Thank you!",
+    "error": "Something went wrong. Please try again."
+  },
   "products": {
     "title": "Mister Cola",
     "subtitle": "Experience the authentic taste",
@@ -44,31 +85,21 @@
     "description": "Every sip supports communities. We believe in making a difference, one bottle at a time. Your choice matters.",
     "cta": "See Impact"
   },
-  "change": {
-    "title": "CHANGE STARTS SMALL",
-    "subtitle": "Join our movement for positive change",
-    "description": "Be part of something bigger. Every purchase contributes to meaningful change in communities across Malaysia.",
-    "cta": "Join the Movement"
-  },
   "instagram": {
     "title": "Follow us on",
     "highlight": "Instagram",
     "cta": "View More"
   },
-  "newsletter": {
-    "title": "Get 10% off your first purchase",
-    "subtitle": "Subscribe to our newsletter for exclusive offers and updates",
-    "placeholder": "Enter your email",
-    "cta": "Subscribe",
-    "privacy": "By subscribing, you agree to our Privacy Policy",
-    "success": "Thank you for subscribing!",
-    "error": "Something went wrong. Please try again."
-  },
   "footer": {
     "company": "Salaam Cola",
     "tagline": "Taste the Freedom",
+    "mission": "Our Mission",
+    "missionText": "To provide premium halal beverages while supporting communities and promoting ethical business practices across Malaysia.",
+    "learnMore": "Learn More",
+    "hours": "Operating Hours",
+    "connect": "Get in Touch",
+    "letsLink": "Let's Link",
     "quickLinks": "Quick Links",
-    "connect": "Connect With Us",
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",

@@ -12,7 +12,9 @@ import {
   Mail,
   MapPin,
   Phone,
+  ExternalLink,
 } from 'lucide-react'
+import Image from 'next/image'
 
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/salaamcola', label: 'Instagram' },
@@ -27,18 +29,23 @@ const quickLinks = [
   { href: '/contact', key: 'contact' },
 ]
 
+const operatingHours = [
+  { day: 'Mon - Fri', hours: '9:00 AM - 6:00 PM' },
+  { day: 'Saturday', hours: '10:00 AM - 4:00 PM' },
+  { day: 'Sunday', hours: 'Closed' },
+]
+
 export function Footer() {
   const t = useTranslations('footer')
   const tNav = useTranslations('navigation')
 
   return (
     <footer className="relative bg-gray-900 text-white overflow-hidden">
-      {/* Background gradient */}
+      {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-salaam-red-500/50 to-transparent" />
 
-      {/* Glass overlay effect */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
+      {/* Top section with columns */}
       <div className="relative container mx-auto px-4 py-16">
         <motion.div
           variants={staggerContainer}
@@ -47,16 +54,75 @@ export function Footer() {
           viewport={{ once: true, margin: '-100px' }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
         >
-          {/* Brand column */}
-          <motion.div variants={fadeInUp} className="space-y-6">
-            <Link href="/" className="inline-block">
-              <span className="text-3xl font-bold">
-                <span className="text-salaam-red-500">Salaam</span>
-                <span className="text-white">Cola</span>
-              </span>
+          {/* Our Mission */}
+          <motion.div variants={fadeInUp} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white uppercase tracking-wider">
+              {t('mission')}
+            </h3>
+            <p className="text-gray-400 leading-relaxed text-sm">
+              {t('missionText')}
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-salaam-red-500 hover:text-salaam-red-400 transition-colors text-sm font-medium"
+            >
+              {t('learnMore')}
+              <ExternalLink className="w-4 h-4" />
             </Link>
-            <p className="text-gray-400 leading-relaxed">{t('tagline')}</p>
-            <div className="flex gap-4">
+          </motion.div>
+
+          {/* Operating Hours */}
+          <motion.div variants={fadeInUp} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white uppercase tracking-wider">
+              {t('hours')}
+            </h3>
+            <ul className="space-y-2">
+              {operatingHours.map((item, index) => (
+                <li key={index} className="flex justify-between text-sm">
+                  <span className="text-gray-400">{item.day}</span>
+                  <span className="text-white">{item.hours}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Get in Touch */}
+          <motion.div variants={fadeInUp} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white uppercase tracking-wider">
+              {t('connect')}
+            </h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm">
+                <MapPin className="w-4 h-4 mt-0.5 text-salaam-red-500 flex-shrink-0" />
+                <span className="text-gray-400">Kuala Lumpur, Malaysia</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Mail className="w-4 h-4 text-salaam-red-500 flex-shrink-0" />
+                <a
+                  href="mailto:hello@salaamcola.com"
+                  className="text-gray-400 hover:text-salaam-red-500 transition-colors"
+                >
+                  hello@salaamcola.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Phone className="w-4 h-4 text-salaam-red-500 flex-shrink-0" />
+                <a
+                  href="tel:+60123456789"
+                  className="text-gray-400 hover:text-salaam-red-500 transition-colors"
+                >
+                  +60 12-345 6789
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Let's Link */}
+          <motion.div variants={fadeInUp} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white uppercase tracking-wider">
+              {t('letsLink')}
+            </h3>
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
@@ -65,103 +131,71 @@ export function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-gray-400 hover:text-white hover:bg-salaam-red-500 transition-all duration-300"
+                  className="w-10 h-10 rounded-lg bg-white/5 backdrop-blur-sm flex items-center justify-center text-gray-400 hover:text-white hover:bg-salaam-red-500 transition-all duration-300 border border-white/10"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-lg font-semibold text-white">{t('quickLinks')}</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.key}>
+            <div className="pt-4">
+              <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">
+                {t('quickLinks')}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {quickLinks.map((link) => (
                   <Link
+                    key={link.key}
                     href={link.href}
-                    className="text-gray-400 hover:text-salaam-red-500 transition-colors duration-200 inline-flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-salaam-red-500 transition-colors"
                   >
-                    <span className="w-0 h-px bg-salaam-red-500 transition-all duration-300 group-hover:w-4" />
                     {tNav(link.key)}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-lg font-semibold text-white">{t('connect')}</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-5 h-5 mt-0.5 text-salaam-red-500 flex-shrink-0" />
-                <span>Kuala Lumpur, Malaysia</span>
-              </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Mail className="w-5 h-5 text-salaam-red-500 flex-shrink-0" />
-                <a
-                  href="mailto:hello@salaamcola.com"
-                  className="hover:text-salaam-red-500 transition-colors"
-                >
-                  hello@salaamcola.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Phone className="w-5 h-5 text-salaam-red-500 flex-shrink-0" />
-                <a
-                  href="tel:+60123456789"
-                  className="hover:text-salaam-red-500 transition-colors"
-                >
-                  +60 12-345 6789
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Legal */}
-          <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-lg font-semibold text-white">{t('legal')}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-gray-400 hover:text-salaam-red-500 transition-colors duration-200"
-                >
-                  {t('privacy')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-gray-400 hover:text-salaam-red-500 transition-colors duration-200"
-                >
-                  {t('terms')}
-                </Link>
-              </li>
-            </ul>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </motion.div>
+      </div>
 
-        {/* Bottom bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 pt-8 border-t border-white/10"
-        >
+      {/* Bottom bar */}
+      <div className="relative border-t border-white/10">
+        <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} {t('company')}. {t('copyright')}.
-            </p>
-            <p className="text-gray-500 text-sm">
-              Made with purpose in Malaysia
-            </p>
+            {/* Logo and copyright */}
+            <div className="flex items-center gap-4">
+              <Link href="/" className="inline-block">
+                <span className="text-xl font-bold">
+                  <span className="text-salaam-red-500">Salaam</span>
+                  <span className="text-white">Cola</span>
+                </span>
+              </Link>
+              <span className="text-gray-600">|</span>
+              <p className="text-gray-500 text-sm">
+                &copy; {new Date().getFullYear()} {t('company')}
+              </p>
+            </div>
+
+            {/* Legal links */}
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacy"
+                className="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+              >
+                {t('privacy')}
+              </Link>
+              <Link
+                href="/terms"
+                className="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+              >
+                {t('terms')}
+              </Link>
+              <span className="text-gray-600 text-sm hidden md:inline">
+                Made with purpose in Malaysia
+              </span>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

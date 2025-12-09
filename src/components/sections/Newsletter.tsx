@@ -6,8 +6,9 @@ import { motion } from 'framer-motion'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { GlassButton } from '@/components/ui/GlassButton'
 import { GlassInput } from '@/components/ui/GlassInput'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '@/lib/animations'
 import { Mail, Send, Check, Gift } from 'lucide-react'
+import Image from 'next/image'
 
 export function Newsletter() {
   const t = useTranslations('newsletter')
@@ -32,9 +33,39 @@ export function Newsletter() {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className="py-20 bg-salaam-red-500 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gray-900" />
+      <div className="absolute inset-0">
+        {/* Wave patterns */}
+        <svg
+          className="absolute top-0 left-0 right-0 w-full h-20"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.1)"
+            d="M0,40 C320,80 420,0 740,40 C1060,80 1140,0 1440,40 L1440,0 L0,0 Z"
+          />
+        </svg>
+
+        {/* Decorative elements */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{ duration: 5, repeat: Infinity }}
+          className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full"
+        />
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+          className="absolute bottom-10 right-10 w-32 h-32 bg-white rounded-full"
+        />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -42,93 +73,93 @@ export function Newsletter() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
+          className="grid lg:grid-cols-2 gap-12 items-center"
         >
-          <GlassCard
-            variant="light"
-            blur="xl"
-            padding="none"
-            hover={false}
-            className="bg-white shadow-2xl overflow-hidden"
-          >
-            <div className="grid md:grid-cols-2">
-              {/* Left side - decorative */}
-              <motion.div
-                variants={fadeInUp}
-                className="hidden md:flex items-center justify-center p-12 bg-gradient-to-br from-salaam-red-500 to-salaam-red-600 relative overflow-hidden"
-              >
-                {/* Decorative circles */}
-                <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-                <div className="absolute bottom-10 right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+          {/* Product image */}
+          <motion.div variants={fadeInLeft} className="relative hidden lg:block">
+            <motion.div
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative w-64 h-80 mx-auto"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=500&fit=crop"
+                alt="Mister Cola"
+                fill
+                className="object-contain drop-shadow-2xl"
+              />
+              {/* Glow */}
+              <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl -z-10 scale-150" />
+            </motion.div>
+          </motion.div>
 
-                <div className="relative z-10 text-center text-white space-y-4">
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                    className="w-20 h-20 mx-auto bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center"
-                  >
-                    <Gift className="w-10 h-10 text-white" />
-                  </motion.div>
-                  <p className="text-4xl font-bold">10% OFF</p>
-                  <p className="text-white/80">Your First Purchase</p>
-                </div>
-              </motion.div>
-
-              {/* Right side - form */}
-              <motion.div variants={fadeInUp} className="p-8 md:p-12 space-y-6">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-salaam-red-500">
-                    <Mail className="w-5 h-5" />
-                    <span className="font-medium">Newsletter</span>
+          {/* Form */}
+          <motion.div variants={fadeInRight} className="text-center lg:text-left">
+            <GlassCard
+              variant="dark"
+              className="bg-white/10 backdrop-blur-xl border-white/20 p-8 md:p-10"
+            >
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center lg:justify-start gap-2">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                      <Gift className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-white/80 font-medium">{t('badge')}</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+
+                  <h2 className="text-3xl md:text-4xl font-bold text-white">
                     {t('title')}
                   </h2>
-                  <p className="text-gray-600">{t('subtitle')}</p>
+                  <p className="text-white/70">{t('subtitle')}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <GlassInput
-                    type="email"
-                    placeholder={t('placeholder')}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    leftIcon={<Mail className="w-5 h-5" />}
-                    disabled={status === 'loading' || status === 'success'}
-                    className="bg-gray-50 border-gray-200"
-                  />
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <GlassInput
+                      type="email"
+                      placeholder={t('placeholder')}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      leftIcon={<Mail className="w-5 h-5" />}
+                      disabled={status === 'loading' || status === 'success'}
+                      className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                    />
 
-                  <GlassButton
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
-                    isLoading={status === 'loading'}
-                    rightIcon={
-                      status === 'success' ? (
-                        <Check className="w-5 h-5" />
-                      ) : (
-                        <Send className="w-5 h-5" />
-                      )
-                    }
-                  >
-                    {status === 'success' ? t('success') : t('cta')}
-                  </GlassButton>
+                    <GlassButton
+                      type="submit"
+                      variant="secondary"
+                      size="lg"
+                      isLoading={status === 'loading'}
+                      rightIcon={
+                        status === 'success' ? (
+                          <Check className="w-5 h-5" />
+                        ) : (
+                          <Send className="w-5 h-5" />
+                        )
+                      }
+                    >
+                      {status === 'success' ? t('success') : t('cta')}
+                    </GlassButton>
+                  </div>
+
+                  {status === 'error' && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-white/80 text-sm"
+                    >
+                      {t('error')}
+                    </motion.p>
+                  )}
                 </form>
 
-                {status === 'error' && (
-                  <motion.p
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-red-500 text-sm"
-                  >
-                    {t('error')}
-                  </motion.p>
-                )}
-
-                <p className="text-xs text-gray-400">{t('privacy')}</p>
-              </motion.div>
-            </div>
-          </GlassCard>
+                <p className="text-xs text-white/50">{t('privacy')}</p>
+              </div>
+            </GlassCard>
+          </motion.div>
         </motion.div>
       </div>
     </section>

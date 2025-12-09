@@ -1,13 +1,11 @@
 import { setRequestLocale } from 'next-intl/server'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { BestSellers } from '@/components/sections/BestSellers'
-import { Retailers } from '@/components/sections/Retailers'
+import { CustomerReviews } from '@/components/sections/CustomerReviews'
+import { ProductLineup } from '@/components/sections/ProductLineup'
 import { TasteIsEverything } from '@/components/sections/TasteIsEverything'
-import { GivingPower } from '@/components/sections/GivingPower'
 import { ChangeStartsSmall } from '@/components/sections/ChangeStartsSmall'
-import { InstagramFeed } from '@/components/sections/InstagramFeed'
+import { TradeEnquiries } from '@/components/sections/TradeEnquiries'
 import { Newsletter } from '@/components/sections/Newsletter'
-import { getBestSellers } from '@/lib/shopify/queries/products'
 
 interface HomePageProps {
   params: Promise<{ locale: string }>
@@ -17,18 +15,27 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  // Fetch best sellers from Shopify (or mock data)
-  const products = await getBestSellers(4)
-
   return (
     <>
+      {/* Hero - Red background with floating can */}
       <HeroSection />
-      <BestSellers products={products} />
-      <Retailers />
+
+      {/* Customer Reviews - Google rating display */}
+      <CustomerReviews />
+
+      {/* Product Lineup - Refreshing Can Lineup grid */}
+      <ProductLineup />
+
+      {/* Taste Is Everything - Dark section with product */}
       <TasteIsEverything />
-      <GivingPower />
+
+      {/* Change Starts Small - Dark with splash image */}
       <ChangeStartsSmall />
-      <InstagramFeed />
+
+      {/* Trade Enquiries - Business partnership section */}
+      <TradeEnquiries />
+
+      {/* Newsletter - Red background with signup */}
       <Newsletter />
     </>
   )

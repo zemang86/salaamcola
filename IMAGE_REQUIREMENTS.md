@@ -4,106 +4,146 @@ This document lists all images needed for the Salaam Cola Malaysia website. Curr
 
 ---
 
-## 1. Product Images
-
-Each product needs **2 images** (main + secondary view). Recommended size: **800x800px** (square format).
-
-| Product | File Name | Description | Current Placeholder |
-|---------|-----------|-------------|---------------------|
-| Mister Cola Classic | `mister-cola-classic-1.jpg` | Main product shot | Unsplash cola image |
-| Mister Cola Classic | `mister-cola-classic-2.jpg` | Side/alternate view | Unsplash cola image |
-| Mister Cola Zero | `mister-cola-zero-1.jpg` | Main product shot (black/silver theme) | Unsplash cola image |
-| Mister Cola Lemon | `mister-cola-lemon-1.jpg` | Main product shot (yellow accent) | Unsplash lemon drink image |
-| Mister Cola 6-Pack | `mister-cola-6pack-1.jpg` | Pack shot showing all bottles | Unsplash bottles image |
-
-**Specifications:**
-- Format: JPG or PNG (PNG if transparency needed)
-- Resolution: 800x800px minimum
-- Background: White/transparent for clean product shots
-- Style: High-quality product photography with consistent lighting
-
----
-
-## 2. Hero Section
+## 1. Hero Section (Red Background)
 
 | Image | File Name | Dimensions | Description |
 |-------|-----------|------------|-------------|
-| Hero Product | `hero-product.png` | 600x800px | Main floating bottle for hero section |
-| Hero Background | `hero-bg.jpg` (optional) | 1920x1080px | Background image/gradient (currently CSS gradient) |
+| Hero Can | `hero-can.png` | 600x800px | Main floating can with transparent background |
 
 **Specifications:**
-- Hero Product: PNG with transparent background for floating effect
+- PNG with transparent background for floating effect
 - High resolution for retina displays
 - Product should have dramatic lighting/shadows
+- Single can image, tilted slightly for dynamic look
 
 ---
 
-## 3. Instagram Feed Images
+## 2. Product Lineup Section (4 Products)
 
-6 images for the Instagram feed section. Size: **400x400px** (square).
+Product images for the "Refreshing Can Lineup" grid. Recommended size: **600x400px** (landscape for pack shots).
 
-| Position | File Name | Content Suggestion |
-|----------|-----------|-------------------|
-| 1 | `instagram-1.jpg` | Product lifestyle shot |
-| 2 | `instagram-2.jpg` | Brand/community photo |
-| 3 | `instagram-3.jpg` | Product close-up |
-| 4 | `instagram-4.jpg` | Customer/event photo |
-| 5 | `instagram-5.jpg` | Behind the scenes |
-| 6 | `instagram-6.jpg` | Creative flat lay |
+| Product | File Name | Description |
+|---------|-----------|-------------|
+| Mister Cola Original 24-Pack | `product-original-pack.jpg` | 24-can pack box/tray shot |
+| Mister Cola Zero 24-Pack | `product-zero-pack.jpg` | 24-can pack box/tray shot |
+| Mister Lemonade 24-Pack | `product-lemonade-pack.jpg` | 24-can pack box/tray shot |
+| Variety Pack 24-Can | `product-variety-pack.jpg` | Mixed variety pack shot |
 
 **Specifications:**
 - Format: JPG
-- Resolution: 400x400px minimum (square crop)
-- Style: Match your actual Instagram feed aesthetic
-- Can be pulled directly from your Instagram account
+- Resolution: 600x400px minimum (4:3 ratio)
+- Background: Clean studio background or lifestyle setting
+- Style: Show the full pack/box clearly
 
 ---
 
-## 4. Retailer Logos
+## 3. Single Can Product Images
 
-Logos for the "Where to Buy" section. Transparent PNG format.
+For product detail pages and floating product displays throughout the site.
 
-| Retailer | File Name | Notes |
-|----------|-----------|-------|
-| AEON | `retailer-aeon.png` | Official logo |
-| myNEWS | `retailer-mynews.png` | Official logo |
-| 7-Eleven | `retailer-7eleven.png` | Official logo |
-| Tesco | `retailer-tesco.png` | Official logo |
-| Giant | `retailer-giant.png` | Official logo |
-| KK Mart | `retailer-kkmart.png` | Official logo |
+| Product | File Name | Description |
+|---------|-----------|-------------|
+| Mister Cola Classic Can | `can-classic.png` | Single can, transparent background |
+| Mister Cola Zero Can | `can-zero.png` | Single can, transparent background |
+| Mister Lemonade Can | `can-lemonade.png` | Single can, transparent background |
 
 **Specifications:**
 - Format: PNG with transparent background
-- Height: 60-80px (width proportional)
-- Color: Grayscale or original colors (site applies grayscale filter)
+- Resolution: 400x500px minimum
+- Style: Clean product shot for floating animations
 
 ---
 
-## 5. Section Background Images (Optional)
+## 4. Customer Reviews Section
 
-These sections currently use CSS gradients but can have background images.
-
-| Section | File Name | Dimensions | Description |
-|---------|-----------|------------|-------------|
-| Taste Is Everything | `taste-bg.jpg` | 1920x1080px | Lifestyle/brand image |
-| Giving Power | `giving-power-bg.jpg` | 1920x1080px | Community/impact image |
-| About Page | `about-hero.jpg` | 1920x600px | Brand story banner |
-| Contact Page | `contact-bg.jpg` | 1920x600px | Office/team image |
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Customer Avatar 1 | `avatar-1.jpg` | 100x100px | Customer photo (or use initials) |
+| Customer Avatar 2 | `avatar-2.jpg` | 100x100px | Customer photo |
+| Customer Avatar 3 | `avatar-3.jpg` | 100x100px | Customer photo |
 
 **Specifications:**
-- Format: JPG (optimized for web)
-- Style: Images should work with dark overlay for text readability
-- Can use brand photography or stock images
+- Format: JPG
+- Resolution: 100x100px (square, will be cropped to circle)
+- Style: Friendly, professional headshots
+- Note: Can use stock photos or real customer photos with permission
 
 ---
 
-## 6. Favicon & Meta Images
+## 5. Taste Is Everything Section
+
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Cola Splash | `taste-splash.jpg` | 1200x800px | Cola splash/pour action shot |
+| Floating Product | `taste-product.png` | 400x500px | Single can with transparent bg |
+
+**Specifications:**
+- Splash image: Dark/moody background, dramatic cola splash
+- Product: PNG with transparency for floating effect
+
+---
+
+## 6. Change Starts Small Section
+
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Background Splash | `change-bg.jpg` | 800x600px | Cola/ice splash background |
+| Featured Can | `change-can.png` | 500x600px | Single can, transparent bg |
+
+**Specifications:**
+- Background: Dark, dramatic cola/ice imagery
+- Product: Clean cut-out for glass card display
+
+---
+
+## 7. Trade Enquiries Section
+
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Product Display | `trade-products.jpg` | 600x600px | Multiple cans/packs arranged |
+
+**Specifications:**
+- Format: JPG
+- Style: Professional product arrangement showing range
+
+---
+
+## 8. Newsletter Section
+
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Newsletter Can | `newsletter-can.png` | 400x500px | Single can, transparent bg |
+
+**Specifications:**
+- PNG with transparent background
+- Used in the red newsletter section
+
+---
+
+## 9. Favicon & Meta Images
 
 | Image | File Name | Dimensions | Usage |
 |-------|-----------|------------|-------|
 | Favicon | `favicon.ico` | 32x32px | Browser tab icon |
 | Apple Touch Icon | `apple-touch-icon.png` | 180x180px | iOS home screen |
 | OG Image | `og-image.jpg` | 1200x630px | Social media sharing |
+
+---
+
+## 10. About Page
+
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Team/Brand Photo | `about-hero.jpg` | 1920x600px | Brand story banner |
+| Founder Photo | `about-founder.jpg` | 400x400px | Founder/team portrait |
+
+---
+
+## 11. Contact Page
+
+| Image | File Name | Dimensions | Description |
+|-------|-----------|------------|-------------|
+| Office/Location | `contact-bg.jpg` | 1920x600px | Office or location photo |
 
 ---
 
@@ -115,32 +155,31 @@ Place all images in the following structure:
 public/
 ├── images/
 │   ├── products/
-│   │   ├── mister-cola-classic-1.jpg
-│   │   ├── mister-cola-classic-2.jpg
-│   │   ├── mister-cola-zero-1.jpg
-│   │   ├── mister-cola-lemon-1.jpg
-│   │   └── mister-cola-6pack-1.jpg
-│   ├── hero/
-│   │   └── hero-product.png
-│   ├── instagram/
-│   │   ├── instagram-1.jpg
-│   │   ├── instagram-2.jpg
-│   │   ├── instagram-3.jpg
-│   │   ├── instagram-4.jpg
-│   │   ├── instagram-5.jpg
-│   │   └── instagram-6.jpg
-│   ├── retailers/
-│   │   ├── retailer-aeon.png
-│   │   ├── retailer-mynews.png
-│   │   ├── retailer-7eleven.png
-│   │   ├── retailer-tesco.png
-│   │   ├── retailer-giant.png
-│   │   └── retailer-kkmart.png
-│   └── backgrounds/
-│       ├── taste-bg.jpg
-│       ├── giving-power-bg.jpg
-│       ├── about-hero.jpg
-│       └── contact-bg.jpg
+│   │   ├── hero-can.png
+│   │   ├── can-classic.png
+│   │   ├── can-zero.png
+│   │   ├── can-lemonade.png
+│   │   ├── product-original-pack.jpg
+│   │   ├── product-zero-pack.jpg
+│   │   ├── product-lemonade-pack.jpg
+│   │   └── product-variety-pack.jpg
+│   ├── sections/
+│   │   ├── taste-splash.jpg
+│   │   ├── taste-product.png
+│   │   ├── change-bg.jpg
+│   │   ├── change-can.png
+│   │   ├── trade-products.jpg
+│   │   └── newsletter-can.png
+│   ├── avatars/
+│   │   ├── avatar-1.jpg
+│   │   ├── avatar-2.jpg
+│   │   └── avatar-3.jpg
+│   ├── pages/
+│   │   ├── about-hero.jpg
+│   │   ├── about-founder.jpg
+│   │   └── contact-bg.jpg
+│   └── logo/
+│       └── salaam-cola-logo.png
 ├── favicon.ico
 ├── apple-touch-icon.png
 └── og-image.jpg
@@ -159,21 +198,42 @@ public/
 3. **Provide 2x resolution** for retina displays when possible
 
 4. **Keep file sizes under:**
-   - Product images: < 200KB each
-   - Hero images: < 500KB
-   - Instagram images: < 100KB each
-   - Background images: < 300KB
+   - Product PNG images: < 300KB each
+   - Pack/lifestyle JPG images: < 200KB each
+   - Background images: < 400KB
+   - Avatars: < 50KB each
 
 ---
 
 ## Summary Checklist
 
-- [ ] 5 Product images (minimum)
-- [ ] 1 Hero product image
-- [ ] 6 Instagram feed images
-- [ ] 6 Retailer logos
-- [ ] 4 Background images (optional)
-- [ ] 3 Meta/favicon images
-- [ ] Logo (already have)
+### Priority 1 (Homepage - Must Have)
+- [ ] 1 Hero can image (PNG, transparent)
+- [ ] 4 Product pack images (JPG)
+- [ ] 3 Single can images (PNG, transparent)
+- [ ] 3 Customer avatar images
+- [ ] 1 Taste splash background
+- [ ] 1 Change section background
+- [ ] 1 Trade section product display
 
-**Total: ~25 images to prepare**
+### Priority 2 (Other Pages)
+- [ ] About page hero image
+- [ ] About page founder photo
+- [ ] Contact page background
+
+### Priority 3 (Meta/Branding)
+- [ ] Favicon (32x32)
+- [ ] Apple touch icon (180x180)
+- [ ] OG image for social sharing (1200x630)
+- [ ] Logo (if not already have)
+
+**Total: ~20 images to prepare**
+
+---
+
+## Notes
+
+- All product images currently use Unsplash placeholders
+- Replace URLs in component files once real images are ready
+- Consider hiring a product photographer for professional can shots
+- Splash/action shots can be sourced from stock if needed

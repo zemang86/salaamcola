@@ -19,6 +19,47 @@
     "cta": "Beli Sekarang",
     "scrollDown": "Tatal untuk meneroka"
   },
+  "reviews": {
+    "title": "Ulasan Pelanggan",
+    "basedOn": "Berdasarkan 500+ ulasan"
+  },
+  "lineup": {
+    "title": "Barisan Tin Menyegarkan",
+    "subtitle": "Temui rangkaian minuman halal premium kami yang direka untuk pengguna yang sedar",
+    "viewAll": "Lihat Semua Produk"
+  },
+  "taste": {
+    "tagline": "Falsafah Kami",
+    "title": "RASA ITU SEGALANYA",
+    "description": "Kami pada asasnya adalah syarikat F&B dengan komitmen terhadap minuman beretika. Produk kami direka untuk pengguna yang sedar yang menghargai kualiti dan tujuan.",
+    "feature1": "Bahan Semulajadi",
+    "feature2": "Sijil Halal",
+    "feature3": "Dibuat dengan Kasih",
+    "cta": "Ketahui Kisah Kami"
+  },
+  "change": {
+    "tagline": "Buat Perbezaan",
+    "title": "PERUBAHAN BERMULA KECIL",
+    "description": "Jadilah sebahagian daripada sesuatu yang lebih besar. Setiap pembelian menyumbang kepada perubahan bermakna dalam komuniti di seluruh Malaysia.",
+    "cta": "Sertai Gerakan"
+  },
+  "trade": {
+    "tagline": "Perkongsian Perniagaan",
+    "title": "Pertanyaan Perdagangan",
+    "description": "Jadilah pengedar dan sertai rangkaian peruncit kami yang semakin berkembang di seluruh Malaysia. Bekerjasama dengan kami untuk membawa perubahan menyegarkan kepada pelanggan anda.",
+    "contactTitle": "Hubungi Kami",
+    "cta": "Hubungi Kami"
+  },
+  "newsletter": {
+    "badge": "Tawaran Istimewa",
+    "title": "Langgan Surat Berita Kami",
+    "subtitle": "Dapatkan diskaun 10% untuk pembelian pertama dan kekal dikemas kini dengan tawaran eksklusif",
+    "placeholder": "Masukkan e-mel anda",
+    "cta": "Langgan",
+    "privacy": "Dengan melanggan, anda bersetuju dengan Dasar Privasi kami",
+    "success": "Terima kasih!",
+    "error": "Sesuatu tidak kena. Sila cuba lagi."
+  },
   "products": {
     "title": "Mister Cola",
     "subtitle": "Rasai keaslian rasa",
@@ -44,31 +85,21 @@
     "description": "Setiap tegukan menyokong komuniti. Kami percaya untuk membuat perbezaan, satu botol pada satu masa. Pilihan anda penting.",
     "cta": "Lihat Impak"
   },
-  "change": {
-    "title": "PERUBAHAN BERMULA KECIL",
-    "subtitle": "Sertai gerakan kami untuk perubahan positif",
-    "description": "Jadilah sebahagian daripada sesuatu yang lebih besar. Setiap pembelian menyumbang kepada perubahan bermakna dalam komuniti di seluruh Malaysia.",
-    "cta": "Sertai Gerakan"
-  },
   "instagram": {
     "title": "Ikuti kami di",
     "highlight": "Instagram",
     "cta": "Lihat Lagi"
   },
-  "newsletter": {
-    "title": "Dapatkan diskaun 10% untuk pembelian pertama",
-    "subtitle": "Langgan surat berita kami untuk tawaran dan kemas kini eksklusif",
-    "placeholder": "Masukkan e-mel anda",
-    "cta": "Langgan",
-    "privacy": "Dengan melanggan, anda bersetuju dengan Dasar Privasi kami",
-    "success": "Terima kasih kerana melanggan!",
-    "error": "Sesuatu tidak kena. Sila cuba lagi."
-  },
   "footer": {
     "company": "Salaam Cola",
     "tagline": "Rasa Kebebasan",
-    "quickLinks": "Pautan Pantas",
+    "mission": "Misi Kami",
+    "missionText": "Menyediakan minuman halal premium sambil menyokong komuniti dan mempromosikan amalan perniagaan beretika di seluruh Malaysia.",
+    "learnMore": "Ketahui Lebih Lanjut",
+    "hours": "Waktu Operasi",
     "connect": "Hubungi Kami",
+    "letsLink": "Ikuti Kami",
+    "quickLinks": "Pautan Pantas",
     "legal": "Undang-undang",
     "privacy": "Dasar Privasi",
     "terms": "Terma Perkhidmatan",
