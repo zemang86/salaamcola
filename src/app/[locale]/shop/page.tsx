@@ -1,7 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { ShopPageClient } from './ShopPageClient'
-import { getProducts } from '@/lib/shopify/queries/products'
 
 interface ShopPageProps {
   params: Promise<{ locale: string }>
@@ -20,7 +19,5 @@ export default async function ShopPage({ params }: ShopPageProps) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const products = await getProducts(20)
-
-  return <ShopPageClient products={products} />
+  return <ShopPageClient />
 }

@@ -2,15 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Quora';
+  src: url('/fonts/quora.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 255 255 255;
     --foreground: 26 26 26;
-    --salaam-red: 229 57 53;
+    --salaam-red: 194 19 22;
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
   }
 
   body {
@@ -102,6 +111,28 @@
   /* Smooth transitions for RTL/LTR */
   .transition-dir {
     transition: margin 0.3s ease, padding 0.3s ease;
+  }
+
+  /* Subtle hover lift effect */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+
+  /* Smooth image scale on hover */
+  .img-hover-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-hover-zoom img {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .img-hover-zoom:hover img {
+    @apply scale-105;
   }
 }
 

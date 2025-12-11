@@ -8,16 +8,17 @@ import { formatPrice } from '@/lib/utils'
 import { slideInRight, overlayAnimation } from '@/lib/animations'
 import { X, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react'
 import Image from 'next/image'
-import { Link } from '@/i18n/routing'
+import { Link, useRouter } from '@/i18n/routing'
 
 export function CartDrawer() {
   const t = useTranslations('cart')
+  const router = useRouter()
   const { cart, isOpen, closeCart, updateItem, removeItem, isLoading } = useCart()
 
   const handleCheckout = () => {
-    if (cart?.checkoutUrl) {
-      window.location.href = cart.checkoutUrl
-    }
+    closeCart()
+    // Navigate to checkout page using next-intl router
+    router.push('/checkout')
   }
 
   return (

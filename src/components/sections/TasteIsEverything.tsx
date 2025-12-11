@@ -1,167 +1,113 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { GlassButton } from '@/components/ui/GlassButton'
+import { ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/routing'
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '@/lib/animations'
-import { ArrowRight, Leaf, Heart, Shield } from 'lucide-react'
-import Image from 'next/image'
 
 export function TasteIsEverything() {
-  const t = useTranslations('taste')
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-24 overflow-hidden"
-    >
-      {/* Split background - dark left, image right */}
-      <div className="absolute inset-0 grid lg:grid-cols-2">
-        {/* Dark side */}
-        <div className="bg-gray-900 relative">
-          {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-              backgroundSize: '32px 32px'
-            }} />
-          </div>
-          {/* Red accent glow */}
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-salaam-red-500/20 rounded-full blur-3xl" />
-        </div>
-        {/* Image side */}
-        <motion.div style={{ y }} className="relative hidden lg:block">
-          <Image
-            src="https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?w=1200&h=800&fit=crop"
-            alt="Cola splash"
-            fill
-            className="object-cover"
+    <section ref={ref} className="relative pt-24 pb-24 md:pt-32 md:pb-32 bg-salaam-red-500 overflow-hidden">
+      {/* Animated wavy background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Wave layer 1 */}
+        <motion.svg
+          className="absolute bottom-0 left-0 w-[200%] h-[50%]"
+          viewBox="0 0 2880 320"
+          preserveAspectRatio="none"
+          animate={{ x: [0, -1440] }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+        >
+          <path
+            fill="rgba(0,0,0,0.1)"
+            d="M0,160L60,170.7C120,181,240,203,360,208C480,213,600,203,720,176C840,149,960,107,1080,101.3C1200,96,1320,128,1440,154.7C1560,181,1680,203,1800,197.3C1920,192,2040,160,2160,154.7C2280,149,2400,171,2520,176C2640,181,2760,171,2820,165.3L2880,160L2880,320L0,320Z"
           />
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/50 to-transparent" />
-        </motion.div>
+        </motion.svg>
+
+        {/* Wave layer 2 */}
+        <motion.svg
+          className="absolute bottom-0 left-0 w-[200%] h-[40%]"
+          viewBox="0 0 2880 320"
+          preserveAspectRatio="none"
+          animate={{ x: [-1440, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+        >
+          <path
+            fill="rgba(0,0,0,0.05)"
+            d="M0,192L60,186.7C120,181,240,171,360,181.3C480,192,600,224,720,218.7C840,213,960,171,1080,154.7C1200,139,1320,149,1440,165.3C1560,181,1680,203,1800,202.7C1920,203,2040,181,2160,165.3C2280,149,2400,139,2520,149.3C2640,160,2760,192,2820,208L2880,224L2880,320L0,320Z"
+          />
+        </motion.svg>
+
+        {/* Gradient overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-black/10 to-transparent" />
       </div>
 
-      {/* Mobile background image */}
-      <div className="absolute inset-0 lg:hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?w=800&h=600&fit=crop"
-          alt="Cola splash"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gray-900/90" />
-      </div>
-
-      {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid lg:grid-cols-2 gap-12 items-center min-h-[500px]"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto text-center"
         >
-          {/* Text content */}
-          <motion.div variants={fadeInLeft} className="space-y-8">
-            <div className="space-y-4">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="inline-block text-salaam-red-500 font-semibold tracking-wider uppercase text-sm"
-              >
-                {t('tagline')}
-              </motion.span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                {t('title')}
-              </h2>
-              <p className="text-lg text-gray-300 max-w-lg">
-                {t('description')}
-              </p>
-            </div>
+          {/* Title */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-quora font-black text-white uppercase tracking-wide mb-6">
+            Taste is Everything
+          </h2>
 
-            {/* Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <motion.div
-                variants={fadeInUp}
-                className="flex items-center gap-3 text-white/80"
-              >
-                <div className="w-10 h-10 rounded-lg bg-salaam-red-500/20 flex items-center justify-center backdrop-blur-sm">
-                  <Leaf className="w-5 h-5 text-salaam-red-400" />
-                </div>
-                <span className="text-sm font-medium">{t('feature1')}</span>
-              </motion.div>
-              <motion.div
-                variants={fadeInUp}
-                className="flex items-center gap-3 text-white/80"
-              >
-                <div className="w-10 h-10 rounded-lg bg-salaam-red-500/20 flex items-center justify-center backdrop-blur-sm">
-                  <Shield className="w-5 h-5 text-salaam-red-400" />
-                </div>
-                <span className="text-sm font-medium">{t('feature2')}</span>
-              </motion.div>
-              <motion.div
-                variants={fadeInUp}
-                className="flex items-center gap-3 text-white/80"
-              >
-                <div className="w-10 h-10 rounded-lg bg-salaam-red-500/20 flex items-center justify-center backdrop-blur-sm">
-                  <Heart className="w-5 h-5 text-salaam-red-400" />
-                </div>
-                <span className="text-sm font-medium">{t('feature3')}</span>
-              </motion.div>
-            </div>
+          {/* Description */}
+          <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
+            We've tackled a bunch of challenges to create an awesome cola alternative that stands out
+            from the big names with the same great taste. Get ready for a unique taste adventure
+            that'll wow you with every sip. Excited? We sure are, and we can't wait for you to try it!
+          </p>
 
-            {/* CTA */}
-            <motion.div variants={fadeInUp}>
-              <Link href="/about">
-                <GlassButton
-                  variant="primary"
-                  size="lg"
-                  rightIcon={<ArrowRight className="w-5 h-5" />}
-                >
-                  {t('cta')}
-                </GlassButton>
-              </Link>
-            </motion.div>
-          </motion.div>
-
-          {/* Floating product - visible on desktop only */}
+          {/* CTA Button */}
           <motion.div
-            variants={fadeInRight}
-            className="relative hidden lg:flex items-center justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.div
-              animate={{
-                y: [0, -15, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="relative w-64 h-80"
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-salaam-red-500 rounded-full font-semibold hover:bg-white/90 transition-colors shadow-lg"
             >
-              <Image
-                src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=500&fit=crop"
-                alt="Mister Cola Product"
-                fill
-                className="object-contain drop-shadow-2xl"
-              />
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-salaam-red-500/30 rounded-full blur-3xl -z-10 scale-150" />
-            </motion.div>
+              Get your free sample
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </motion.div>
+      </div>
+
+      {/* Top curved divider - white to red */}
+      <div className="absolute top-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="w-full h-16 md:h-24 rotate-180"
+        >
+          <path
+            fill="white"
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          />
+        </svg>
+      </div>
+
+      {/* Bottom curved divider - red to white */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="w-full h-16 md:h-24"
+        >
+          <path
+            fill="white"
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          />
+        </svg>
       </div>
     </section>
   )

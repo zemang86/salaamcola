@@ -1,11 +1,12 @@
 import { setRequestLocale } from 'next-intl/server'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { CustomerReviews } from '@/components/sections/CustomerReviews'
-import { ProductLineup } from '@/components/sections/ProductLineup'
+import { ReviewNewsletter } from '@/components/sections/ReviewNewsletter'
+import { BestSellers } from '@/components/sections/BestSellers'
 import { TasteIsEverything } from '@/components/sections/TasteIsEverything'
 import { ChangeStartsSmall } from '@/components/sections/ChangeStartsSmall'
-import { TradeEnquiries } from '@/components/sections/TradeEnquiries'
-import { Newsletter } from '@/components/sections/Newsletter'
+import { Supporters } from '@/components/sections/Supporters'
+import { PledgeSection } from '@/components/sections/PledgeSection'
+import { InstagramFeed } from '@/components/sections/InstagramFeed'
 
 interface HomePageProps {
   params: Promise<{ locale: string }>
@@ -20,23 +21,26 @@ export default async function HomePage({ params }: HomePageProps) {
       {/* Hero - Red background with floating can */}
       <HeroSection />
 
-      {/* Customer Reviews - Google rating display */}
-      <CustomerReviews />
+      {/* Customer Review + Newsletter Subscribe */}
+      <ReviewNewsletter />
 
-      {/* Product Lineup - Refreshing Can Lineup grid */}
-      <ProductLineup />
-
-      {/* Taste Is Everything - Dark section with product */}
+      {/* Taste Is Everything - Red section */}
       <TasteIsEverything />
 
-      {/* Change Starts Small - Dark with splash image */}
+      {/* Best Sellers - Product showcase */}
+      <BestSellers />
+
+      {/* Change Starts Small - Image grid + text */}
       <ChangeStartsSmall />
 
-      {/* Trade Enquiries - Business partnership section */}
-      <TradeEnquiries />
+      {/* Supporters Logos */}
+      <Supporters />
 
-      {/* Newsletter - Red background with signup */}
-      <Newsletter />
+      {/* Pledge Section - Icons row */}
+      <PledgeSection />
+
+      {/* Instagram Feed */}
+      <InstagramFeed />
     </>
   )
 }

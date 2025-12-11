@@ -10,6 +10,7 @@ import { Footer } from '@/components/layout/Footer'
 import { CartDrawer } from '@/components/shop/CartDrawer'
 import { SmoothScroll } from '@/components/layout/SmoothScroll'
 import { PageTransition } from '@/components/layout/PageTransition'
+import { SplashScreen } from '@/components/layout/SplashScreen'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -64,18 +65,20 @@ export default async function LocaleLayout({
       <body className={`antialiased ${isRTL ? 'font-arabic' : 'font-sans'}`}>
         <NextIntlClientProvider messages={messages}>
           <CartProvider>
-            <SmoothScroll>
-              <div className="flex min-h-screen flex-col">
-                <Header />
-                <main className="flex-1">
-                  <PageTransition>
-                    {children}
-                  </PageTransition>
-                </main>
-                <Footer />
-                <CartDrawer />
-              </div>
-            </SmoothScroll>
+            <SplashScreen>
+              <SmoothScroll>
+                <div className="flex min-h-screen flex-col">
+                  <Header />
+                  <main className="flex-1">
+                    <PageTransition>
+                      {children}
+                    </PageTransition>
+                  </main>
+                  <Footer />
+                  <CartDrawer />
+                </div>
+              </SmoothScroll>
+            </SplashScreen>
           </CartProvider>
         </NextIntlClientProvider>
       </body>

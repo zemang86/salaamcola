@@ -8,7 +8,11 @@ import { locales, localeNames, Locale } from '@/i18n/config'
 import { Globe, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  isScrolled?: boolean
+}
+
+export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale
   const router = useRouter()
   const pathname = usePathname()
@@ -26,7 +30,12 @@ export function LanguageSwitcher() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-salaam-red-500 transition-colors rounded-full hover:bg-white/20"
+        className={cn(
+          "flex items-center gap-2 px-3 py-2 transition-colors rounded-full hover:bg-white/20",
+          isScrolled
+            ? "text-gray-700 hover:text-salaam-red-500"
+            : "text-white hover:text-white/80"
+        )}
         aria-label={t('language')}
       >
         <Globe className="w-5 h-5" />
