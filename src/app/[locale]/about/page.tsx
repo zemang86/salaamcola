@@ -16,6 +16,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from 'lucide-react'
+import Image from 'next/image'
 
 const values = [
   {
@@ -131,21 +132,30 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div variants={fadeInRight}>
-              <GlassCard className="aspect-square bg-gradient-to-br from-salaam-red-500/20 to-salaam-red-600/30 flex items-center justify-center">
-                <div className="text-center text-white space-y-4">
-                  <motion.div
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-32 h-32 mx-auto bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center"
-                  >
-                    <Target className="w-16 h-16 text-white" />
-                  </motion.div>
-                  <p className="text-2xl font-bold">Our Mission</p>
-                  <p className="text-white/80 max-w-xs mx-auto">
-                    To create positive change, one refreshing sip at a time
-                  </p>
+              <div className="relative aspect-square rounded-3xl overflow-hidden">
+                <Image
+                  src="/images/change/WhatsApp Image 2025-12-11 at 23.51.22.jpeg"
+                  alt="Our Mission"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white space-y-4 p-6">
+                    <motion.div
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="w-32 h-32 mx-auto bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center"
+                    >
+                      <Target className="w-16 h-16 text-white" />
+                    </motion.div>
+                    <p className="text-2xl font-bold">Our Mission</p>
+                    <p className="text-white/80 max-w-xs mx-auto">
+                      To create positive change, one refreshing sip at a time
+                    </p>
+                  </div>
                 </div>
-              </GlassCard>
+              </div>
             </motion.div>
           </motion.div>
         </div>
