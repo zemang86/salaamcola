@@ -16,13 +16,13 @@ const sliderImages = [
   },
   {
     id: 2,
-    src: '/uuu.jpg',
-    alt: 'Salaam Cola lifestyle 2',
+    src: '/images/change/WhatsApp Image 2025-12-11 at 23.51.27.jpeg',
+    alt: 'Salaam Cola products with KL skyline',
   },
   {
     id: 3,
-    src: '/yyy.jpg',
-    alt: 'Salaam Cola lifestyle 3',
+    src: '/images/change/WhatsApp Image 2025-12-11 at 23.51.26.jpeg',
+    alt: 'Salaam Cola drone delivery event',
   },
 ]
 
