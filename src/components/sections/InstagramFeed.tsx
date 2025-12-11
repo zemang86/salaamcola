@@ -7,12 +7,12 @@ import { Instagram } from 'lucide-react'
 import Image from 'next/image'
 
 const instagramPosts = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=400&fit=crop' },
-  { id: 2, image: 'https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=400&h=400&fit=crop' },
-  { id: 3, image: 'https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=400&h=400&fit=crop' },
-  { id: 4, image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=400&fit=crop' },
-  { id: 5, image: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=400&h=400&fit=crop' },
-  { id: 6, image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop' },
+  { id: 1, image: '/images/change/WhatsApp Image 2025-12-11 at 23.51.22.jpeg' },
+  { id: 2, image: '/images/change/WhatsApp Image 2025-12-11 at 23.51.25.jpeg' },
+  { id: 3, image: '/images/change/WhatsApp Image 2025-12-11 at 23.51.26.jpeg' },
+  { id: 4, image: '/images/change/WhatsApp Image 2025-12-11 at 23.51.26 (1).jpeg' },
+  { id: 5, image: '/images/change/WhatsApp Image 2025-12-11 at 23.51.27.jpeg' },
+  { id: 6, image: '/images/change/WhatsApp Image 2025-12-11 at 23.51.27 (1).jpeg' },
 ]
 
 export function InstagramFeed() {
@@ -25,7 +25,7 @@ export function InstagramFeed() {
       <div className="relative py-16">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop"
+            src="/images/change/WhatsApp Image 2025-12-11 at 23.51.27.jpeg"
             alt="Instagram background"
             fill
             className="object-cover opacity-40"
