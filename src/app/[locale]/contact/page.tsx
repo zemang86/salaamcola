@@ -9,7 +9,6 @@ import { GlassInput } from '@/components/ui/GlassInput'
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '@/lib/animations'
 import {
   Mail,
-  Phone,
   MapPin,
   Send,
   MessageSquare,
@@ -17,40 +16,56 @@ import {
   CheckCircle,
   Instagram,
   Facebook,
-  Twitter,
+  Building,
+  Shield,
 } from 'lucide-react'
+import { ThreadsIcon, TikTokIcon, XIcon, YouTubeIcon } from '@/components/icons/SocialIcons'
 
 const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@salaamcola.com',
-    href: 'mailto:hello@salaamcola.com',
-  },
-  {
-    icon: Phone,
-    title: 'Phone',
-    value: '+60 12-345 6789',
-    href: 'tel:+60123456789',
-  },
-  {
-    icon: MapPin,
-    title: 'Address',
-    value: 'Kuala Lumpur, Malaysia',
-    href: '#',
+    value: 'hello@salaamcolamy.com',
+    href: 'mailto:hello@salaamcolamy.com',
   },
   {
     icon: Clock,
     title: 'Business Hours',
-    value: 'Mon - Fri: 9AM - 6PM',
+    value: '9.00am - 5.00pm',
+    href: '#',
+  },
+  {
+    icon: Building,
+    title: 'Company',
+    value: 'DUNYA DAMAI SDN BHD (1645635-W)',
+    href: '#',
+  },
+  {
+    icon: MapPin,
+    title: 'Address',
+    value: 'Block B-03-01, No 21, Galeria Hartamas, Jalan 26A/70A Desa Sri Hartamas, 50480 Kuala Lumpur',
     href: '#',
   },
 ]
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://instagram.com/salaamcola', label: 'Instagram' },
-  { icon: Facebook, href: 'https://facebook.com/salaamcola', label: 'Facebook' },
-  { icon: Twitter, href: 'https://twitter.com/salaamcola', label: 'Twitter' },
+  { icon: Instagram, href: 'https://instagram.com/salaamcolamy', label: 'Instagram' },
+  { icon: Facebook, href: 'https://facebook.com/salaamcolamy', label: 'Facebook' },
+  { icon: ThreadsIcon, href: 'https://threads.net/@salaamcolamy', label: 'Threads' },
+  { icon: TikTokIcon, href: 'https://tiktok.com/@salaamcolamy', label: 'TikTok' },
+  { icon: XIcon, href: 'https://x.com/salaamcolamy', label: 'X' },
+  { icon: YouTubeIcon, href: 'https://youtube.com/@salaamcolamy', label: 'YouTube' },
+]
+
+const storeLocations = [
+  { name: 'Eraman (KLIA)', address: 'KLIA Terminal' },
+  { name: 'VPS Vending', address: 'Various Locations' },
+  { name: 'Hadramawt Bukit Bintang', address: 'Bukit Bintang, KL' },
+  { name: 'Kunafa Crisp Bukit Bintang', address: 'Bukit Bintang, KL' },
+  { name: 'BETAWI TTDI', address: 'TTDI, KL' },
+  { name: 'Woodfire', address: 'Multiple Locations' },
+  { name: 'Ignition Burgers', address: 'Kuala Lumpur' },
+  { name: 'Various Outlets', address: 'Pedas, Nilai, Seremban, USIM' },
 ]
 
 export default function ContactPage() {
@@ -262,12 +277,43 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <GlassCard className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div className="text-center text-gray-500 space-y-2">
-                  <MapPin className="w-12 h-12 mx-auto text-salaam-red-500/50" />
-                  <p className="font-medium">Kuala Lumpur, Malaysia</p>
-                  <p className="text-sm">Map integration coming soon</p>
+              {/* Store Locator */}
+              <div id="store-locator">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  Find Salaam Cola
+                </h3>
+                <GlassCard className="bg-white">
+                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                    {storeLocations.map((store, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+                      >
+                        <MapPin className="w-5 h-5 text-salaam-red-500 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-medium text-gray-900">{store.name}</p>
+                          <p className="text-sm text-gray-500">{store.address}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </GlassCard>
+              </div>
+
+              {/* Halal/KKM Statement */}
+              <GlassCard className="bg-salaam-red-50 border-salaam-red-200">
+                <div className="flex items-start gap-3">
+                  <Shield className="w-8 h-8 text-salaam-red-500 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-2">Halal & KKM Certified</h3>
+                    <p className="text-gray-600 text-sm">
+                      Yes, all of our products are 100% Halal JAKIM certified and KKM-approved.
+                      You can find our products at our exclusive retail and F&B partners.
+                    </p>
+                    <a href="#store-locator" className="text-salaam-red-500 hover:underline text-sm font-medium mt-2 inline-block">
+                      Click here to find stores →
+                    </a>
+                  </div>
                 </div>
               </GlassCard>
             </motion.div>

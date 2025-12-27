@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Heart, Briefcase } from 'lucide-react'
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 
@@ -57,24 +57,42 @@ export function ChangeStartsSmall() {
             className="space-y-6 text-center lg:text-left"
           >
             <span className="inline-block px-4 py-1.5 text-sm font-medium text-salaam-red-500 bg-salaam-red-50 backdrop-blur-sm border border-salaam-red-100 rounded-full">
-              Meet your match
+              Purpose-Driven
             </span>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-quora font-black text-salaam-red-500 uppercase tracking-wide">
-              Change Starts Small
+              Where Your Sip Goes
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Our adventure started with a dream, to create choices that resonate
-              with those who think and care deeply about what they consume. Our
-              core ethos is giving back to those who need it most. Our product is all
-              about high standards in quality and giving you options, but with a twist
-              —we're all in on sustainability and ethics. It's about reshaping your
-              favourites in a way that feels good and responsible.
+              Salaam Cola was founded on the principle of 'Purposeful Consumption.' We connect with the people who think and care deeply about what they consume. Our core value is built on a cycle of kindness, where 10% of profits support global humanitarian causes. We have reshaped a classic favorite into a responsible alternative.
             </p>
+
+            {/* Bullet Points */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-salaam-red-50 flex items-center justify-center flex-shrink-0">
+                  <Heart className="w-5 h-5 text-salaam-red-500" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Sip with Purpose</p>
+                  <p className="text-sm text-gray-600">Join the mission for global humanitarian aids</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-salaam-red-50 flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="w-5 h-5 text-salaam-red-500" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Business</p>
+                  <p className="text-sm text-gray-600">Distribute Salaam Cola at your premise</p>
+                </div>
+              </div>
+            </div>
+
             <Link
-              href="/about"
+              href="/programs"
               className="inline-flex items-center gap-2 px-6 py-3 bg-salaam-red-500 text-white rounded-full font-semibold hover:bg-salaam-red-600 transition-colors"
             >
-              Get started
+              Learn More
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

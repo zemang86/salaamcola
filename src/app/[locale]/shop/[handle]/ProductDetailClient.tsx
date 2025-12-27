@@ -46,6 +46,7 @@ export function ProductDetailClient({
 
   const [quantity, setQuantity] = useState(1)
   const [isAdded, setIsAdded] = useState(false)
+  const [activeTab, setActiveTab] = useState<'description' | 'additional' | 'review'>('description')
 
   const handleAddToCart = () => {
     addDemoItem(product.id, quantity)
@@ -223,6 +224,120 @@ export function ProductDetailClient({
               </div>
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Product Tabs */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          {/* Tab Headers */}
+          <div className="flex border-b border-gray-200">
+            <button
+              onClick={() => setActiveTab('description')}
+              className={`px-6 py-4 font-medium transition-colors ${
+                activeTab === 'description'
+                  ? 'text-salaam-red-500 border-b-2 border-salaam-red-500'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Description
+            </button>
+            <button
+              onClick={() => setActiveTab('additional')}
+              className={`px-6 py-4 font-medium transition-colors ${
+                activeTab === 'additional'
+                  ? 'text-salaam-red-500 border-b-2 border-salaam-red-500'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Additional Information
+            </button>
+            <button
+              onClick={() => setActiveTab('review')}
+              className={`px-6 py-4 font-medium transition-colors ${
+                activeTab === 'review'
+                  ? 'text-salaam-red-500 border-b-2 border-salaam-red-500'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Reviews
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="py-8">
+            {activeTab === 'description' && (
+              <div className="prose prose-gray max-w-none">
+                <p className="text-gray-600 leading-relaxed">
+                  Experience the clean, bold bite of authentic cola. We've layered in hints of earthy herbs and warm spices, finishing with a sharp, zesty citrus twist that keeps every sip fresh. With fine, smooth bubbles that aren't too harsh on the throat, it's a familiar taste, but elevated for a better way to refresh.
+                </p>
+                <p className="text-gray-600 leading-relaxed mt-4">
+                  Salaam Cola is crafted for the conscious consumer who values quality, ethics, and great taste. Every bottle represents our commitment to making a difference in the world, one sip at a time.
+                </p>
+              </div>
+            )}
+
+            {activeTab === 'additional' && (
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4 max-w-md">
+                  <div className="text-gray-500">Volume</div>
+                  <div className="text-gray-900 font-medium">330ml</div>
+                  <div className="text-gray-500">Category</div>
+                  <div className="text-gray-900 font-medium">{product.category}</div>
+                  <div className="text-gray-500">Certification</div>
+                  <div className="text-gray-900 font-medium">Halal JAKIM, KKM-Approved</div>
+                  <div className="text-gray-500">Storage</div>
+                  <div className="text-gray-900 font-medium">Store in cool, dry place</div>
+                  <div className="text-gray-500">Origin</div>
+                  <div className="text-gray-900 font-medium">Malaysia</div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'review' && (
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="text-4xl font-bold text-gray-900">{product.rating}.0</div>
+                  <div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-5 h-5 ${
+                            i < product.rating
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'fill-gray-200 text-gray-200'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <p className="text-gray-500 text-sm mt-1">Based on {product.reviews} reviews</p>
+                  </div>
+                </div>
+                <div className="border-t pt-6 space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 flex-shrink-0" />
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium text-gray-900">Ahmad R.</span>
+                        <span className="text-gray-400 text-sm">Negeri Sembilan</span>
+                      </div>
+                      <div className="flex items-center gap-1 mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <p className="text-gray-600 mt-2">Rasa yang sangat sedap! Saya sangat suka dengan kola ini.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </motion.div>
 
         {/* Related products */}

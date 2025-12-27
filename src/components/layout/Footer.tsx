@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { Link } from '@/i18n/routing'
 import { motion } from 'framer-motion'
-import { Instagram, Facebook, Twitter, ArrowRight } from 'lucide-react'
+import { Instagram, Facebook, ArrowRight } from 'lucide-react'
+import { ThreadsIcon, TikTokIcon, XIcon, YouTubeIcon } from '@/components/icons/SocialIcons'
 import Image from 'next/image'
 
 const shopLinks = [
@@ -26,9 +27,12 @@ const aboutLinks = [
 ]
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://instagram.com/salaamcola' },
-  { icon: Facebook, href: 'https://facebook.com/salaamcola' },
-  { icon: Twitter, href: 'https://twitter.com/salaamcola' },
+  { icon: Instagram, href: 'https://instagram.com/salaamcolamy' },
+  { icon: Facebook, href: 'https://facebook.com/salaamcolamy' },
+  { icon: ThreadsIcon, href: 'https://threads.net/@salaamcolamy' },
+  { icon: TikTokIcon, href: 'https://tiktok.com/@salaamcolamy' },
+  { icon: XIcon, href: 'https://x.com/salaamcolamy' },
+  { icon: YouTubeIcon, href: 'https://youtube.com/@salaamcolamy' },
 ]
 
 export function Footer() {

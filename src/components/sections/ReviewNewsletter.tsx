@@ -31,7 +31,7 @@ export function ReviewNewsletter() {
 
             {/* Review Text */}
             <p className="text-gray-700 text-base md:text-lg mb-6 leading-relaxed">
-              Finally! A cola brand with morals and ethics! This is an upgrade for all Muslims! Taste was 10/10.
+              "Akhirnya! Jenama kola dengan nilai dan etika! Ini adalah peningkatan untuk semua Muslim! Rasa 10/10."
             </p>
 
             {/* Reviewer */}
@@ -39,15 +39,15 @@ export function ReviewNewsletter() {
               <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
                 <Image
                   src="/images/avatar-placeholder.jpg"
-                  alt="Claire Johnson"
+                  alt="Ahmad Razak"
                   width={48}
                   height={48}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-left">
-                <p className="font-semibold text-gray-900">Claire Johnson</p>
-                <p className="text-sm text-gray-500">Verified Buyer</p>
+                <p className="font-semibold text-gray-900">Ahmad Razak</p>
+                <p className="text-sm text-gray-500">Negeri Sembilan</p>
               </div>
             </div>
           </motion.div>

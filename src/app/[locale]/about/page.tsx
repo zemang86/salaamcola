@@ -42,11 +42,8 @@ const values = [
 ]
 
 const milestones = [
-  { year: '2020', title: 'Founded', description: 'Salaam Cola was born with a vision for ethical refreshment' },
-  { year: '2021', title: 'First Production', description: 'Launched our first batch of Mister Cola' },
-  { year: '2022', title: 'Retail Expansion', description: 'Available in AEON, myNEWS, and 7-Eleven nationwide' },
-  { year: '2023', title: 'Community Impact', description: 'Reached 50+ communities through our giving program' },
-  { year: '2024', title: 'Growing Strong', description: 'Expanding product line and deepening our impact' },
+  { year: '2025', title: 'Global Presence', description: 'Available in 33 countries worldwide' },
+  { year: '2026', title: 'Malaysia Launch', description: 'Finally arrives in Malaysia' },
 ]
 
 export default function AboutPage() {
@@ -105,28 +102,26 @@ export default function AboutPage() {
           >
             <motion.div variants={fadeInLeft} className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                {t('title')}
+                Our Story
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                {t('description')}
+                Salaam Cola is leading a new wave in Malaysia. We've combined a premium, craft-style taste with a mission to give back. Founded in the UK, Salaam Cola was born from a simple belief; that what you drink should be as ethical as it is delicious.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Founded in Malaysia, Salaam Cola represents a new wave of conscious
-                consumerism. We believe that what you drink should not only taste
-                great but also contribute to something greater than yourself.
+                For the conscious drinker who refuses to settle, we offer a drink that's high in quality and heavy on heart. It's the familiar taste you love, crafted for a world that deserves more.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-gray-700">
                   <CheckCircle className="w-5 h-5 text-salaam-red-500" />
-                  <span>Halal Certified</span>
+                  <span>Global Halal Certified</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-700">
                   <CheckCircle className="w-5 h-5 text-salaam-red-500" />
-                  <span>Malaysian Made</span>
+                  <span>KKM-Approved</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-700">
                   <CheckCircle className="w-5 h-5 text-salaam-red-500" />
-                  <span>Community Focused</span>
+                  <span>Certified</span>
                 </div>
               </div>
             </motion.div>
