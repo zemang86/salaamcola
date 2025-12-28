@@ -8,12 +8,12 @@ import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 
 const images = [
-  '/images/change/WhatsApp Image 2025-12-11 at 23.51.22.jpeg',
+  '/images/DSC00424.jpg',
   '/images/change/WhatsApp Image 2025-12-11 at 23.51.25.jpeg',
   '/images/change/WhatsApp Image 2025-12-11 at 23.51.26.jpeg',
-  '/images/change/WhatsApp Image 2025-12-11 at 23.51.26 (1).jpeg',
+  '/images/image-gen (13).jpg',
   '/images/change/WhatsApp Image 2025-12-11 at 23.51.27.jpeg',
-  '/images/change/WhatsApp Image 2025-12-11 at 23.51.27 (1).jpeg',
+  '/images/lalala.png',
 ]
 
 export function ChangeStartsSmall() {
