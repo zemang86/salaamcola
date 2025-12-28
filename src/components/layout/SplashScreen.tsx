@@ -67,7 +67,7 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Content container */}
-            <div className="relative z-10 flex flex-col items-center justify-center">
+            <div className="relative z-10 flex flex-col items-center justify-center overflow-visible">
               {/* Can image with animation */}
               <motion.div
                 initial={{ y: 100, opacity: 0, scale: 0.8 }}
@@ -77,7 +77,7 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
                   ease: [0.25, 0.46, 0.45, 0.94],
                   delay: 0.2,
                 }}
-                className="relative"
+                className="relative overflow-visible"
               >
                 <motion.div
                   animate={{
@@ -88,13 +88,14 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
+                  className="overflow-visible"
                 >
                   <Image
                     src="/images/Untitled design.png"
                     alt="Salaam Cola"
                     width={300}
                     height={600}
-                    className="h-[350px] md:h-[450px] lg:h-[500px] w-auto drop-shadow-2xl"
+                    className="h-[350px] md:h-[450px] lg:h-[500px] w-auto min-w-[280px] md:min-w-0 drop-shadow-2xl"
                     priority
                   />
                 </motion.div>
