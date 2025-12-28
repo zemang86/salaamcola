@@ -76,7 +76,7 @@ export function BestSellers() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Link href={product.href}>
+                <Link href={product.href} scroll={true} onClick={() => window.scrollTo(0, 0)}>
                   <div className="group text-center">
                     {/* Product Image */}
                     <div className="relative aspect-square bg-gray-50 rounded-2xl overflow-hidden mb-4 max-w-[280px] md:max-w-[350px] lg:max-w-[400px] mx-auto">

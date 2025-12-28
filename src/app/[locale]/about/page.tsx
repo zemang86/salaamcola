@@ -11,7 +11,6 @@ import {
   Users,
   Globe,
   Award,
-  Target,
   Sparkles,
   ArrowRight,
   CheckCircle,
@@ -42,6 +41,7 @@ const values = [
 ]
 
 const milestones = [
+  { year: '2020', title: 'Founded', description: 'Salaam Cola was born with a vision for ethical refreshment' },
   { year: '2025', title: 'Global Presence', description: 'Available in 33 countries worldwide' },
   { year: '2026', title: 'Malaysia Launch', description: 'Finally arrives in Malaysia' },
 ]
@@ -129,27 +129,11 @@ export default function AboutPage() {
             <motion.div variants={fadeInRight}>
               <div className="relative aspect-square rounded-3xl overflow-hidden">
                 <Image
-                  src="/images/change/WhatsApp Image 2025-12-11 at 23.51.22.jpeg"
-                  alt="Our Mission"
+                  src="/images/image-gen (13).jpg"
+                  alt="Our Story"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white space-y-4 p-6">
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="w-32 h-32 mx-auto bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center"
-                    >
-                      <Target className="w-16 h-16 text-white" />
-                    </motion.div>
-                    <p className="text-2xl font-bold">Our Mission</p>
-                    <p className="text-white/80 max-w-xs mx-auto">
-                      To create positive change, one refreshing sip at a time
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -269,6 +253,7 @@ export default function AboutPage() {
             <p className="text-white/80 max-w-xl mx-auto">
               Join thousands of Malaysians who have made the switch to purposeful refreshment.
             </p>
+            <div className="pt-4">
             <Link href="/shop">
               <GlassButton
                 variant="secondary"
@@ -279,6 +264,7 @@ export default function AboutPage() {
                 Shop Now
               </GlassButton>
             </Link>
+            </div>
           </motion.div>
         </div>
       </section>

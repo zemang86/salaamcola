@@ -31,15 +31,15 @@ export function InstagramFeed() {
           className="text-center space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-quora font-black text-white uppercase tracking-wide">
-            Join Us
+            Follow Us
           </h2>
           <p className="text-white/70 max-w-xl mx-auto">
-            Follow our journey and be part of the Salaam Cola movement. Connect with us on TikTok for the latest updates, behind-the-scenes content, and more!
+            Be part of the Salaam Cola movement. Connect with us on TikTok for the latest updates and behind-the-scenes content!
           </p>
 
           {/* TikTok Link Button */}
           <motion.a
-            href="https://tiktok.com/@salaamcolamy"
+            href="https://www.tiktok.com/@salaamcolamy"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}

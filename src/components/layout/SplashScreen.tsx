@@ -90,7 +90,7 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
                   }}
                 >
                   <Image
-                    src="/images/hero/Can-Mockup-V2.webp"
+                    src="/images/Untitled design.png"
                     alt="Salaam Cola"
                     width={300}
                     height={600}

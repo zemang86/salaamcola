@@ -15,11 +15,10 @@ import {
   Clock,
   CheckCircle,
   Instagram,
-  Facebook,
   Building,
-  Shield,
 } from 'lucide-react'
 import { ThreadsIcon, TikTokIcon, XIcon, YouTubeIcon } from '@/components/icons/SocialIcons'
+import { StoreLocatorMap } from '@/components/shared/StoreLocatorMap'
 
 const contactInfo = [
   {
@@ -50,23 +49,12 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/salaamcolamy', label: 'Instagram' },
-  { icon: Facebook, href: 'https://facebook.com/salaamcolamy', label: 'Facebook' },
   { icon: ThreadsIcon, href: 'https://threads.net/@salaamcolamy', label: 'Threads' },
   { icon: TikTokIcon, href: 'https://tiktok.com/@salaamcolamy', label: 'TikTok' },
   { icon: XIcon, href: 'https://x.com/salaamcolamy', label: 'X' },
   { icon: YouTubeIcon, href: 'https://youtube.com/@salaamcolamy', label: 'YouTube' },
 ]
 
-const storeLocations = [
-  { name: 'Eraman (KLIA)', address: 'KLIA Terminal' },
-  { name: 'VPS Vending', address: 'Various Locations' },
-  { name: 'Hadramawt Bukit Bintang', address: 'Bukit Bintang, KL' },
-  { name: 'Kunafa Crisp Bukit Bintang', address: 'Bukit Bintang, KL' },
-  { name: 'BETAWI TTDI', address: 'TTDI, KL' },
-  { name: 'Woodfire', address: 'Multiple Locations' },
-  { name: 'Ignition Burgers', address: 'Kuala Lumpur' },
-  { name: 'Various Outlets', address: 'Pedas, Nilai, Seremban, USIM' },
-]
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -277,52 +265,40 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Store Locator */}
-              <div id="store-locator">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Find Salaam Cola
-                </h3>
-                <GlassCard className="bg-white">
-                  <div className="space-y-3 max-h-64 overflow-y-auto">
-                    {storeLocations.map((store, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
-                      >
-                        <MapPin className="w-5 h-5 text-salaam-red-500 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-gray-900">{store.name}</p>
-                          <p className="text-sm text-gray-500">{store.address}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </GlassCard>
-              </div>
-
-              {/* Halal/KKM Statement */}
-              <GlassCard className="bg-salaam-red-50 border-salaam-red-200">
-                <div className="flex items-start gap-3">
-                  <Shield className="w-8 h-8 text-salaam-red-500 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Halal & KKM Certified</h3>
-                    <p className="text-gray-600 text-sm">
-                      Yes, all of our products are 100% Halal JAKIM certified and KKM-approved.
-                      You can find our products at our exclusive retail and F&B partners.
-                    </p>
-                    <a href="#store-locator" className="text-salaam-red-500 hover:underline text-sm font-medium mt-2 inline-block">
-                      Click here to find stores →
-                    </a>
-                  </div>
-                </div>
-              </GlassCard>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
+      {/* Store Locator Map Section */}
+      <section id="store-locator" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-salaam-red-500 mb-2">
+              Find Salaam Cola
+            </h2>
+            <p className="text-gray-600">Locate our stores across Malaysia</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <StoreLocatorMap maxWidth="max-w-4xl" showStoreList={true} />
+          </motion.div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             variants={staggerContainer}
@@ -344,11 +320,11 @@ export default function ContactPage() {
               {[
                 {
                   q: 'Is Salaam Cola halal certified?',
-                  a: 'Yes, all our products are 100% halal certified and comply with Islamic dietary standards.',
+                  a: 'Yes, all of our products are 100% Halal JAKIM certified and KKM-approved.',
                 },
                 {
                   q: 'Where can I buy Salaam Cola?',
-                  a: 'You can find our products at major retailers including AEON, myNEWS, 7-Eleven, and through our online shop.',
+                  a: 'You can find our products at our exclusive retail and F&B partners listed above.',
                 },
                 {
                   q: 'Do you ship nationwide?',

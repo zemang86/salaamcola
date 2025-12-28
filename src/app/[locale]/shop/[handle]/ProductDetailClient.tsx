@@ -24,6 +24,7 @@ interface DemoProduct {
   title: string
   category: string
   description: string
+  longDescription?: string
   price: number
   originalPrice: number | null
   discount: number | null
@@ -271,29 +272,107 @@ export function ProductDetailClient({
           {/* Tab Content */}
           <div className="py-8">
             {activeTab === 'description' && (
-              <div className="prose prose-gray max-w-none">
-                <p className="text-gray-600 leading-relaxed">
-                  Experience the clean, bold bite of authentic cola. We've layered in hints of earthy herbs and warm spices, finishing with a sharp, zesty citrus twist that keeps every sip fresh. With fine, smooth bubbles that aren't too harsh on the throat, it's a familiar taste, but elevated for a better way to refresh.
-                </p>
-                <p className="text-gray-600 leading-relaxed mt-4">
-                  Salaam Cola is crafted for the conscious consumer who values quality, ethics, and great taste. Every bottle represents our commitment to making a difference in the world, one sip at a time.
-                </p>
+              <div className="prose prose-gray max-w-none space-y-4">
+                {(product.longDescription || product.description).split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="text-gray-600 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             )}
 
             {activeTab === 'additional' && (
-              <div className="space-y-4">
+              <div className="space-y-8">
+                {/* Basic Info */}
                 <div className="grid grid-cols-2 gap-4 max-w-md">
+                  <div className="text-gray-500">Weight</div>
+                  <div className="text-gray-900 font-medium">8 kg</div>
+                  <div className="text-gray-500">Cans</div>
+                  <div className="text-gray-900 font-medium">Box of 24, Single</div>
                   <div className="text-gray-500">Volume</div>
                   <div className="text-gray-900 font-medium">330ml</div>
                   <div className="text-gray-500">Category</div>
                   <div className="text-gray-900 font-medium">{product.category}</div>
                   <div className="text-gray-500">Certification</div>
                   <div className="text-gray-900 font-medium">Halal JAKIM, KKM-Approved</div>
-                  <div className="text-gray-500">Storage</div>
-                  <div className="text-gray-900 font-medium">Store in cool, dry place</div>
                   <div className="text-gray-500">Origin</div>
                   <div className="text-gray-900 font-medium">Malaysia</div>
+                </div>
+
+                {/* Nutrition Information */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Nutrition Information</h4>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Per 100ml */}
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h5 className="font-medium text-gray-700 mb-3">Per 100ml</h5>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Energy</span>
+                          <span className="text-gray-900">195kJ / 46kcal</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Total Fat</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Total Carbohydrate</span>
+                          <span className="text-gray-900">11g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Total Sugars</span>
+                          <span className="text-gray-900">11g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Fiber</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Protein</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Salt</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Per 330ml */}
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h5 className="font-medium text-gray-700 mb-3">Per 330ml (1 can)</h5>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Energy</span>
+                          <span className="text-gray-900">643.5kJ / 151.8kcal</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Total Fat</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Total Carbohydrate</span>
+                          <span className="text-gray-900">36.6g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Total Sugars</span>
+                          <span className="text-gray-900">36.3g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Fiber</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Protein</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Salt</span>
+                          <span className="text-gray-900">0g</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}

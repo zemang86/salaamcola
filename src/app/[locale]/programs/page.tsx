@@ -19,17 +19,17 @@ const malaysiaPrograms = [
   {
     icon: Users,
     title: 'Youth Hangouts',
-    description: 'Supporting youth programs and community centers across Malaysia.',
+    description: 'We hit up the spots where the next generation chills, bringing the vibe and free cold colas to the youth.',
   },
   {
     icon: Building,
     title: 'Mosques & Orphanages',
-    description: 'Contributing to mosques and orphanages in local communities.',
+    description: 'From Iftar at the Masjid to weekend visits at orphanages, we\'re there to share a meal, a drink, and a smile.',
   },
   {
     icon: HandHeart,
     title: 'Grassroots Giving',
-    description: 'Direct support to families and individuals in need.',
+    description: 'We don\'t wait for a "campaign." If there\'s a community that needs a boost, we load up the van and go.',
   },
 ]
 
@@ -95,13 +95,10 @@ export default function ProgramsPage() {
                 </h2>
               </div>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Salaam Cola was founded on the principle of 'Purposeful Consumption.'
-                We connect with people who think and care deeply about what they consume.
+                While others stay silent, we act. We aren't just "raising awareness"—we're sending real aid where it's needed most.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Our core value is built on a cycle of kindness. With every purchase,
-                you're not just enjoying a refreshing drink – you're contributing to
-                humanitarian efforts around the world.
+                10% of each can, a significant portion of our profits goes directly to Muslim countries to provide food, medicine, and clean water.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2 text-gray-700 bg-gray-50 px-4 py-2 rounded-full">
@@ -152,9 +149,8 @@ export default function ProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 MALAYSIA: SERVING THE HOME TEAM
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                While we think globally, we act locally. Here's how Salaam Cola is making
-                a difference right here in Malaysia.
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                We believe refreshment should be shared. We're taking the "Salaam Spirit" across Malaysia, showing up where it matters most:
               </p>
             </motion.div>
 
@@ -173,6 +169,16 @@ export default function ProgramsPage() {
                   </GlassCard>
                 </motion.div>
               ))}
+            </motion.div>
+
+            {/* Closing Statement */}
+            <motion.div variants={fadeInUp} className="text-center pt-8">
+              <p className="text-xl md:text-2xl font-semibold text-gray-900">
+                This isn't just charity. It's a community.
+              </p>
+              <p className="text-lg text-salaam-red-500 font-medium mt-2">
+                Now you know where your sip goes.
+              </p>
             </motion.div>
           </motion.div>
         </div>

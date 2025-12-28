@@ -57,10 +57,10 @@ export function ChangeStartsSmall() {
             className="space-y-6 text-center lg:text-left"
           >
             <span className="inline-block px-4 py-1.5 text-sm font-medium text-salaam-red-500 bg-salaam-red-50 backdrop-blur-sm border border-salaam-red-100 rounded-full">
-              Purpose-Driven
+              Meet your match
             </span>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-quora font-black text-salaam-red-500 uppercase tracking-wide">
-              Where Your Sip Goes
+              Change Starts Small
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
               Salaam Cola was founded on the principle of 'Purposeful Consumption.' We connect with the people who think and care deeply about what they consume. Our core value is built on a cycle of kindness, where 10% of profits support global humanitarian causes. We have reshaped a classic favorite into a responsible alternative.
@@ -92,7 +92,7 @@ export function ChangeStartsSmall() {
               href="/programs"
               className="inline-flex items-center gap-2 px-6 py-3 bg-salaam-red-500 text-white rounded-full font-semibold hover:bg-salaam-red-600 transition-colors"
             >
-              Learn More
+              Where Your Sip Goes
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

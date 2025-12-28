@@ -6,7 +6,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '@/lib/anima
 import { GlassCard } from '@/components/ui/GlassCard'
 import { GlassButton } from '@/components/ui/GlassButton'
 import { GlassInput } from '@/components/ui/GlassInput'
-import { FileUpload } from '@/components/forms/FileUpload'
+// import { FileUpload } from '@/components/forms/FileUpload' // Hidden for now
 import {
   Store,
   Building2,
@@ -68,7 +68,7 @@ export default function JoinUsPage() {
     position: '',
     message: '',
   })
-  const [cvFile, setCvFile] = useState<File | null>(null)
+  // const [cvFile, setCvFile] = useState<File | null>(null) // Hidden for now
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -80,7 +80,7 @@ export default function JoinUsPage() {
 
     setStatus('success')
     setFormData({ name: '', email: '', phone: '', position: '', message: '' })
-    setCvFile(null)
+    // setCvFile(null) // Hidden for now
 
     setTimeout(() => setStatus('idle'), 3000)
   }
@@ -354,11 +354,13 @@ export default function JoinUsPage() {
                       />
                     </div>
 
+                    {/* CV Upload - Hidden for now
                     <FileUpload
                       onFileSelect={setCvFile}
                       label="Upload your CV/Resume"
                       maxSizeMB={5}
                     />
+                    */}
 
                     <GlassButton
                       type="submit"
